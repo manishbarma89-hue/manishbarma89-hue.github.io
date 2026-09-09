@@ -7,7 +7,9 @@
 
     <title>Manish Barma — Video Editor</title>
     <meta name="description" content="Manish Barma — Video Editor specializing in cinematic videos, short-form content, typography and visual storytelling.">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,6 +26,7 @@
             background: #090909;
             color: #f5f5f5;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -37,7 +40,9 @@
             margin: auto;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             height: 85px;
@@ -45,6 +50,8 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #1c1c1c;
+
+            animation: navReveal 0.8s ease forwards;
         }
 
         .logo {
@@ -60,16 +67,24 @@
             color: #aaa;
         }
 
+        .nav-links a {
+            transition: color 0.25s ease;
+        }
+
         .nav-links a:hover {
             color: white;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 88vh;
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         .availability {
@@ -79,6 +94,9 @@
             font-size: 13px;
             color: #aaa;
             margin-bottom: 30px;
+
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
         }
 
         .dot {
@@ -86,6 +104,8 @@
             height: 8px;
             background: #f5f5f5;
             border-radius: 50%;
+
+            animation: pulse 2s ease-in-out infinite;
         }
 
         .hero h1 {
@@ -93,6 +113,9 @@
             line-height: 0.88;
             letter-spacing: -6px;
             max-width: 1000px;
+
+            opacity: 0;
+            animation: heroTitle 1s cubic-bezier(.2,.7,.2,1) 0.35s forwards;
         }
 
         .hero h1 span {
@@ -104,6 +127,9 @@
             margin-top: 35px;
             color: #999;
             font-size: 18px;
+
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.65s forwards;
         }
 
         .buttons {
@@ -111,6 +137,9 @@
             gap: 15px;
             margin-top: 35px;
             flex-wrap: wrap;
+
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.8s forwards;
         }
 
         .button {
@@ -118,7 +147,11 @@
             padding: 14px 22px;
             border: 1px solid #333;
             font-size: 14px;
-            transition: 0.25s;
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
         }
 
         .button.primary {
@@ -128,10 +161,58 @@
         }
 
         .button:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
-        /* GENERAL */
+        .button.primary:hover {
+            background: #ddd;
+            border-color: #ddd;
+        }
+
+
+        /* SCROLL INDICATOR */
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 0;
+
+            color: #555;
+            font-size: 11px;
+            letter-spacing: 2px;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            animation: fadeIn 1s ease 1.3s forwards;
+            opacity: 0;
+        }
+
+        .scroll-line {
+            width: 45px;
+            height: 1px;
+            background: #555;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: "";
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+
+        /* =========================
+           GENERAL
+        ========================= */
 
         section {
             padding: 120px 0;
@@ -159,7 +240,10 @@
             font-size: 18px;
         }
 
-        /* ABOUT */
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
@@ -177,7 +261,10 @@
             margin-bottom: 20px;
         }
 
-        /* SERVICES */
+
+        /* =========================
+           SERVICES
+        ========================= */
 
         .services {
             margin-top: 50px;
@@ -191,6 +278,14 @@
             padding: 28px 0;
             border-bottom: 1px solid #222;
             align-items: center;
+
+            transition:
+                padding-left 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .service:hover {
+            padding-left: 15px;
         }
 
         .service-number {
@@ -200,6 +295,11 @@
 
         .service h3 {
             font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover h3 {
+            transform: translateX(5px);
         }
 
         .service p {
@@ -207,7 +307,10 @@
             font-size: 15px;
         }
 
-        /* SKILLS */
+
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills {
             display: flex;
@@ -221,9 +324,23 @@
             padding: 12px 18px;
             color: #aaa;
             font-size: 14px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease;
         }
 
-        /* APPROACH */
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #666;
+            color: white;
+        }
+
+
+        /* =========================
+           APPROACH
+        ========================= */
 
         .approach-grid {
             display: grid;
@@ -236,6 +353,15 @@
             border: 1px solid #222;
             padding: 35px 28px;
             min-height: 220px;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-8px);
+            border-color: #444;
         }
 
         .approach-card span {
@@ -253,7 +379,10 @@
             font-size: 14px;
         }
 
-        /* WORK */
+
+        /* =========================
+           WORK
+        ========================= */
 
         .work-placeholder {
             border: 1px solid #222;
@@ -263,6 +392,36 @@
             align-items: center;
             text-align: center;
             padding: 30px;
+
+            position: relative;
+            overflow: hidden;
+
+            transition:
+                border-color 0.4s ease,
+                transform 0.4s ease;
+        }
+
+        .work-placeholder::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #ffffff08;
+            filter: blur(50px);
+
+            animation: glowMove 5s ease-in-out infinite alternate;
+        }
+
+        .work-placeholder:hover {
+            border-color: #444;
+            transform: translateY(-5px);
+        }
+
+        .work-placeholder h3,
+        .work-placeholder p {
+            position: relative;
+            z-index: 2;
         }
 
         .work-placeholder h3 {
@@ -274,7 +433,10 @@
             color: #777;
         }
 
-        /* CONTACT */
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             padding-bottom: 140px;
@@ -290,6 +452,15 @@
             font-size: clamp(22px, 4vw, 42px);
             border-bottom: 1px solid #555;
             padding-bottom: 8px;
+
+            transition:
+                color 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: #aaa;
+            border-color: white;
         }
 
         .socials {
@@ -302,13 +473,21 @@
         .socials a {
             color: #999;
             font-size: 14px;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
         }
 
         .socials a:hover {
             color: white;
+            transform: translateY(-3px);
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             border-top: 1px solid #1c1c1c;
@@ -323,7 +502,99 @@
             gap: 20px;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes navReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroTitle {
+            from {
+                opacity: 0;
+                transform: translateY(45px);
+                letter-spacing: -1px;
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                letter-spacing: -6px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.35;
+                transform: scale(0.7);
+            }
+        }
+
+        @keyframes scrollLine {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes glowMove {
+            from {
+                transform: translate(-80px, -20px);
+            }
+
+            to {
+                transform: translate(80px, 20px);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 750px) {
 
@@ -372,7 +643,12 @@
             .footer-inner {
                 flex-direction: column;
             }
+
+            .scroll-indicator {
+                display: none;
+            }
         }
+
     </style>
 </head>
 
@@ -397,6 +673,7 @@
         <!-- HERO -->
 
         <section class="hero">
+
             <div>
 
                 <div class="availability">
@@ -415,11 +692,22 @@
                 </p>
 
                 <div class="buttons">
-                    <a href="#work" class="button primary">VIEW MY WORK →</a>
-                    <a href="#contact" class="button">GET IN TOUCH</a>
+                    <a href="#work" class="button primary">
+                        VIEW MY WORK →
+                    </a>
+
+                    <a href="#contact" class="button">
+                        GET IN TOUCH
+                    </a>
                 </div>
 
             </div>
+
+            <div class="scroll-indicator">
+                <span class="scroll-line"></span>
+                SCROLL
+            </div>
+
         </section>
 
 
@@ -527,6 +815,7 @@
             </p>
 
             <div class="skills">
+
                 <div class="skill">DaVinci Resolve</div>
                 <div class="skill">Video Editing</div>
                 <div class="skill">Color Grading</div>
@@ -535,6 +824,7 @@
                 <div class="skill">Motion Graphics</div>
                 <div class="skill">Short-form Editing</div>
                 <div class="skill">Storytelling</div>
+
             </div>
 
         </section>
@@ -552,25 +842,33 @@
 
                 <div class="approach-card">
                     <span>01</span>
+
                     <h3>Story First</h3>
+
                     <p>
                         Every cut should have a reason. I focus on making the
                         story easy to follow and interesting to watch.
                     </p>
                 </div>
 
+
                 <div class="approach-card">
                     <span>02</span>
+
                     <h3>Clean Visuals</h3>
+
                     <p>
                         I prefer purposeful typography, transitions and effects
                         instead of filling a video with unnecessary effects.
                     </p>
                 </div>
 
+
                 <div class="approach-card">
                     <span>03</span>
+
                     <h3>Attention to Detail</h3>
+
                     <p>
                         Timing, sound, color and small visual details can make
                         the difference between an average edit and a great one.
@@ -594,6 +892,7 @@
 
                 <div>
                     <h3>Projects coming soon.</h3>
+
                     <p>
                         My latest cinematic edits and short-form projects
                         will be showcased here.
@@ -646,14 +945,23 @@
     <!-- FOOTER -->
 
     <footer>
+
         <div class="container">
 
             <div class="footer-inner">
-                <div>© 2026 Manish Barma</div>
-                <div>Video Editor · Kathmandu</div>
+
+                <div>
+                    © 2026 Manish Barma
+                </div>
+
+                <div>
+                    Video Editor · Kathmandu
+                </div>
+
             </div>
 
         </div>
+
     </footer>
 
 </body>
