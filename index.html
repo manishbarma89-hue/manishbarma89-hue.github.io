@@ -1,38 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Manish Barma | Video Editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Barme | Video Editor</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 0.95;
+        }
+
+        .hero h1 span {
+            opacity: 0.5;
+        }
+
+        .hero p {
+            margin-top: 30px;
+            font-size: 20px;
+            max-width: 600px;
+            color: #bdbdbd;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 25px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+        section h2 {
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+
+        .about {
+            max-width: 800px;
+            color: #bdbdbd;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        footer {
+            padding: 40px 8%;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>MANISH BARME</h1>
-    <h2>Video Editor</h2>
+    <nav>
+        <div class="logo">MANISH.</div>
 
-    <p>
-        I’m an intermediate video editor specializing in
-        cinematic edits, short-form content, and storytelling.
-    </p>
+        <div>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <h2>My Work</h2>
+    <main>
 
-    <h3>Cinematic Edit</h3>
-    <p>Showcase of my cinematic editing and color grading.</p>
+        <section class="hero">
+            <div>
+                <h1>
+                    VIDEO<br>
+                    <span>EDITOR.</span>
+                </h1>
 
-    <h3>Short Form Edit</h3>
-    <p>Fast-paced social media editing with typography and sound design.</p>
+                <p>
+                    I create cinematic videos, engaging short-form content,
+                    and visual stories using DaVinci Resolve.
+                </p>
 
-    <h2>About Me</h2>
+                <a href="#work" class="button">VIEW MY WORK →</a>
+            </div>
+        </section>
 
-    <p>
-        I have been learning video editing for 6 months
-        and primarily use DaVinci Resolve.
-    </p>
+        <section id="work">
+            <h2>Selected Work</h2>
 
-    <h2>Contact</h2>
+            <p class="about">
+                My best video editing projects will be showcased here.
+                Cinematic edits, reels, social media content and more.
+            </p>
+        </section>
 
-    <p>Email: manishbarma89@gmail.com</p>
-    <p>Instagram: https://www.instagram.com/lb_manish_4/?__pwa=1#</p>
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p class="about">
+                I'm Manish Barme, a video editor focused on cinematic
+                storytelling, clean typography and engaging visual edits.
+                I mainly work with DaVinci Resolve.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Work Together</h2>
+
+            <p class="about">
+                Have a project in mind? Get in touch and let's create
+                something great.
+            </p>
+
+            <a href="mailto:YOUR_EMAIL_HERE" class="button">
+                CONTACT ME →
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Manish Barme. All rights reserved.
+    </footer>
 
 </body>
 </html>
