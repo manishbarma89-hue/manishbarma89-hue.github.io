@@ -1,1135 +1,571 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manish Barma | Cinematic Video Editor and Colorist</title>
-<meta name="description" content="Manish Barma is a video editor working in DaVinci Resolve. Cinematic editing, color grading and motion graphics for filmmakers, brands and creators.">
-<meta property="og:title" content="Manish Barma | Cinematic Video Editor and Colorist">
-<meta property="og:description" content="Manish Barma is a video editor working in DaVinci Resolve. Cinematic editing, color grading and motion graphics for filmmakers, brands and creators.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#0F141A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F141A'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='800' font-size='30' text-anchor='middle' fill='%23E2A65B'%3EMB%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ==========================================================
-   Manish Barma - Video Editor Portfolio
-   Palette idea: teal shadows, tungsten highlights (a graded look)
-   ========================================================== */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root {
-  --bg: #0F141A;
-  --bg-raise: #161D25;
-  --line: rgba(236, 231, 222, 0.12);
-  --line-strong: rgba(236, 231, 222, 0.28);
-  --text: #ECE7DE;
-  --muted: #9BA4AE;
-  --tungsten: #E2A65B;
-  --tungsten-hi: #EDB878;
-  --teal: #4F8F94;
-  --display: 'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --radius: 4px;
-  --header-h: 68px;
-}
+    <title>Manish Barma | Junior Video Editor</title>
 
-*, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; }
-[hidden] { display: none !important; }
+    <meta name="description"
+          content="Manish Barma is a Junior Video Editor specializing in cinematic editing, color grading, storytelling and motion graphics.">
 
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
-img, video, iframe, svg { display: block; max-width: 100%; }
-a { color: inherit; }
-ul, ol { padding: 0; }
+    <style>
 
-h1, h2, h3 {
-  font-family: var(--display);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-}
-h1 { font-size: clamp(2.5rem, 7vw, 5.25rem); }
-h2 { font-size: clamp(1.8rem, 3.6vw, 2.75rem); }
-h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
-
-p { max-width: 65ch; }
-.muted { color: var(--muted); }
-
-:focus-visible { outline: 2px solid var(--tungsten); outline-offset: 3px; }
-
-.skip {
-  position: absolute; left: 1rem; top: -4rem; z-index: 100;
-  background: var(--tungsten); color: #1a1206; padding: .6rem 1rem; border-radius: var(--radius);
-  font-weight: 600; text-decoration: none;
-}
-.skip:focus { top: 1rem; }
-
-.container { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
-.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
-.section + .section { padding-top: 0; }
-.section-alt { background: var(--bg-raise); }
-.section-alt + .section { padding-top: clamp(3.5rem, 8vw, 6.5rem); }
-
-/* ---------- Buttons and links ---------- */
-.btn {
-  display: inline-block; padding: .8rem 1.4rem; border-radius: 6px; border: 1px solid transparent;
-  font: 600 .98rem/1.2 var(--body); text-decoration: none; cursor: pointer;
-  transition: background-color .2s, border-color .2s, color .2s;
-}
-.btn-primary { background: var(--tungsten); color: #1a1206; }
-.btn-primary:hover { background: var(--tungsten-hi); }
-.btn-ghost { border-color: var(--line-strong); color: var(--text); background: transparent; }
-.btn-ghost:hover { border-color: var(--tungsten); color: var(--tungsten-hi); }
-.btn-sm { padding: .55rem 1rem; font-size: .92rem; }
-.btn-row { display: flex; flex-wrap: wrap; gap: .9rem; }
-
-.text-link { color: var(--tungsten); text-underline-offset: 4px; }
-.text-link:hover { color: var(--tungsten-hi); }
-
-/* ---------- Header ---------- */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(15, 20, 26, .88); backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.nav { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
-.wordmark { font-family: var(--display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
-.nav-links a:not(.btn) {
-  color: var(--muted); text-decoration: none; font-size: .96rem; font-weight: 500; padding-block: .4rem;
-  border-bottom: 2px solid transparent; transition: color .2s;
-}
-.nav-links a:not(.btn):hover { color: var(--text); }
-.nav-links a[aria-current="page"]:not(.btn) { color: var(--text); border-bottom-color: var(--tungsten); }
-
-.nav-toggle {
-  display: none; width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 6px;
-  background: transparent; cursor: pointer; place-content: center; gap: 6px;
-}
-.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text); transition: transform .2s; }
-.nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
-
-@media (max-width: 980px) {
-  .nav-toggle { display: grid; }
-  .nav-links {
-    position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; align-items: stretch;
-    gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: .5rem 1.25rem 1.25rem;
-    display: none;
-  }
-  .nav-links[data-open="true"] { display: flex; }
-  .nav-links li { border-bottom: 1px solid var(--line); }
-  .nav-links li:last-child { border: 0; padding-top: 1rem; }
-  .nav-links a:not(.btn) { display: block; padding-block: .9rem; border-bottom: 0; }
-  .nav-links a.btn { display: block; text-align: center; }
-}
-
-/* ---------- Hero ---------- */
-.hero {
-  position: relative; isolation: isolate;
-  min-height: calc(100svh - var(--header-h)); display: grid; grid-template-rows: auto 1fr auto;
-  background:
-    radial-gradient(110% 80% at 80% 25%, rgba(226, 166, 91, .26), transparent 58%),
-    radial-gradient(90% 90% at 8% 95%, rgba(79, 143, 148, .32), transparent 62%),
-    var(--bg);
-}
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-.hero-bar { background: #000; color: var(--muted); font-size: .92rem; }
-.hero-bar-top .container { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: .85rem; }
-.status { display: inline-flex; align-items: center; gap: .55rem; }
-.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--tungsten); }
-
-.hero-main { display: grid; align-content: center; padding-block: clamp(2.5rem, 7vw, 5rem); }
-.hero-main h1 { max-width: 13ch; margin-bottom: 1.5rem; }
-.hero-main .lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: #cfcac1; max-width: 52ch; margin-bottom: 2rem; }
-
-.hero-bar-bottom .timeline-row { display: flex; align-items: center; gap: 1.25rem; padding-block: 1rem; }
-.timecode { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: .95rem; color: var(--tungsten); min-width: 11ch; }
-.timeline { position: relative; flex: 1; display: flex; gap: 4px; height: 28px; }
-.clip { flex: 1; border-radius: 3px; background: rgba(155, 164, 174, .28); }
-.clip.t { background: rgba(79, 143, 148, .55); }
-.clip.a { background: rgba(226, 166, 91, .5); }
-.playhead { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--text); left: 0; }
-.playhead::before { content: ""; position: absolute; top: -2px; left: -4px; border: 5px solid transparent; border-top-color: var(--text); }
-
-/* ---------- Inner page head ---------- */
-.page-head { padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--line); margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.page-head h1 { font-size: clamp(2.4rem, 6vw, 4.25rem); margin-bottom: 1rem; }
-.page-head .lead { color: #cfcac1; font-size: 1.15rem; }
-
-.section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-
-/* ---------- Project cards ---------- */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem 1.5rem; }
-.project { display: block; text-align: left; background: none; border: 0; padding: 0; color: inherit; font: inherit; text-decoration: none; cursor: pointer; }
-.thumb {
-  position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius); background: var(--fb);
-}
-.thumb::before, .thumb::after { content: ""; position: absolute; left: 0; right: 0; height: 12.8%; background: #000; z-index: 1; }
-.thumb::before { top: 0; }
-.thumb::after { bottom: 0; }
-.thumb .play {
-  position: absolute; left: 1rem; bottom: 15%; z-index: 2; width: 42px; height: 42px; border-radius: 50%;
-  background: rgba(15, 20, 26, .7); border: 1px solid var(--line-strong); display: grid; place-items: center;
-  transition: background-color .2s, border-color .2s;
-}
-.thumb .play::before { content: ""; margin-left: 3px; border-style: solid; border-width: 7px 0 7px 11px; border-color: transparent transparent transparent var(--text); }
-.project:hover .play, .project:focus-visible .play { background: var(--tungsten); border-color: var(--tungsten); }
-.project:hover .play::before, .project:focus-visible .play::before { border-left-color: #1a1206; }
-.project-meta { padding-top: .9rem; }
-.project-meta h3 { margin-bottom: .2rem; }
-.project-meta p { color: var(--muted); font-size: .95rem; }
-
-.g1 { --fb: linear-gradient(160deg, #1c3b44 0%, #2f6a6e 42%, #e2a65b 100%); }
-.g2 { --fb: linear-gradient(200deg, #0b1220 0%, #1b2f52 50%, #a35d67 100%); }
-.g3 { --fb: linear-gradient(135deg, #2a2233 0%, #b5654a 100%); }
-.g4 { --fb: linear-gradient(120deg, #12252b 0%, #4f8f94 60%, #d8e0d2 100%); }
-.g5 { --fb: linear-gradient(180deg, #1a1a1f 0%, #4a3b2d 60%, #c79a5b 100%); }
-.g6 { --fb: linear-gradient(150deg, #1d2a24 0%, #5b7a58 60%, #d3c28a 100%); }
-
-.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.25rem; }
-.chip {
-  padding: .5rem 1.05rem; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text);
-  font: 500 .95rem/1 var(--body); cursor: pointer; transition: background-color .2s, color .2s;
-}
-.chip:hover { border-color: var(--tungsten); }
-.chip[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-/* ---------- Generic layout blocks ---------- */
-.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem 3rem; }
-.item { border-top: 1px solid var(--line-strong); padding-top: 1.25rem; }
-.item h3 { margin-bottom: .55rem; }
-.item p { color: #cfcac1; }
-.item .good-for { color: var(--muted); font-size: .95rem; margin-top: .8rem; }
-
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
-@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
-
-.prose p + p { margin-top: 1rem; }
-.prose h2 { margin-bottom: 1.25rem; }
-
-.plain { list-style: none; }
-.plain li { padding-block: .65rem; border-bottom: 1px solid var(--line); }
-.plain li:first-child { border-top: 1px solid var(--line); }
-
-.steps { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 2rem; counter-reset: s; }
-.steps li { counter-increment: s; border-top: 1px solid var(--line-strong); padding-top: 1.25rem; }
-.steps li::before { content: counter(s); display: block; font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--tungsten); margin-bottom: .6rem; }
-.steps h3 { margin-bottom: .4rem; }
-.steps p { color: #cfcac1; font-size: 1rem; }
-
-.cta { text-align: left; }
-.cta h2 { max-width: 20ch; margin-bottom: 1rem; }
-.cta p { color: #cfcac1; margin-bottom: 1.75rem; }
-
-.detail-list { display: grid; grid-template-columns: auto 1fr; gap: .6rem 1.5rem; }
-.detail-list dt { color: var(--muted); }
-
-/* ---------- Video players and modal ---------- */
-.player { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; }
-.player iframe { width: 100%; height: 100%; border: 0; }
-.player-empty {
-  position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 1rem; text-align: center; padding: 2rem;
-  background: var(--fb, linear-gradient(160deg, #1c3b44 0%, #2f6a6e 42%, #e2a65b 100%));
-}
-.player-empty::before, .player-empty::after { content: ""; position: absolute; left: 0; right: 0; height: 12.8%; background: #000; }
-.player-empty::before { top: 0; }
-.player-empty::after { bottom: 0; }
-.player-empty > * { position: relative; z-index: 1; }
-.player-empty .play-lg { width: 68px; height: 68px; border-radius: 50%; background: rgba(15, 20, 26, .7); border: 1px solid var(--line-strong); display: grid; place-items: center; }
-.player-empty .play-lg::before { content: ""; margin-left: 4px; border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent var(--text); }
-.player-empty p { color: #e6e1d8; font-size: .98rem; }
-
-dialog { border: 0; padding: 0; background: #000; color: var(--text); width: min(1000px, 94vw); max-height: 94vh; border-radius: var(--radius); }
-dialog::backdrop { background: rgba(5, 8, 11, .88); }
-.modal-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 1rem; border-bottom: 1px solid var(--line); }
-.modal-bar h2 { font-size: 1.05rem; letter-spacing: -0.01em; }
-.modal-close { border: 1px solid var(--line-strong); background: transparent; color: var(--text); border-radius: 6px; padding: .4rem .8rem; font: 500 .92rem var(--body); cursor: pointer; }
-.modal-close:hover { border-color: var(--tungsten); }
-.modal-frame { aspect-ratio: 16 / 9; position: relative; }
-.modal-frame iframe { width: 100%; height: 100%; border: 0; }
-.modal-empty { display: grid; place-content: center; text-align: center; height: 100%; padding: 2rem; gap: .5rem; }
-.modal-empty p { margin-inline: auto; color: var(--muted); }
-
-/* ---------- Before / after slider ---------- */
-.ba-list > div + div { margin-top: clamp(2.5rem, 5vw, 4rem); }
-.ba-row { display: grid; grid-template-columns: 1.7fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
-.ba-list > div:nth-child(even) { grid-template-columns: 1fr 1.7fr; }
-.ba-list > div:nth-child(even) .ba { order: 2; }
-@media (max-width: 800px) {
-  .ba-row, .ba-list > div:nth-child(even) { grid-template-columns: 1fr; }
-  .ba-list > div:nth-child(even) .ba { order: 0; }
-}
-.ba { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; user-select: none; --pos: 50%; }
-.ba-layer { position: absolute; inset: 0; background-size: cover; background-position: center; }
-.ba-after { background-image: var(--img-after, var(--fb-after)); }
-.ba-before { background-image: var(--img-before, var(--fb-before)); clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
-.ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; background: var(--text); transform: translateX(-1px); pointer-events: none; }
-.ba-handle::after {
-  content: "\2039\00a0\203A"; position: absolute; top: 50%; left: 50%; width: 38px; height: 38px; border-radius: 50%;
-  background: var(--text); color: var(--bg); transform: translate(-50%, -50%); display: grid; place-items: center; font-weight: 700; line-height: 1;
-}
-.ba-tag { position: absolute; bottom: .75rem; padding: .2rem .6rem; background: rgba(0, 0, 0, .7); font-size: .85rem; border-radius: 3px; pointer-events: none; }
-.ba-tag.l { left: .75rem; }
-.ba-tag.r { right: .75rem; }
-.ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
-.ba:focus-within { outline: 2px solid var(--tungsten); outline-offset: 3px; }
-.ba-note h3 { margin-bottom: .5rem; }
-.ba-note p { color: #cfcac1; }
-
-.sc1 { --fb-before: linear-gradient(170deg, #6f7377, #8a8d8f 55%, #5d6062); --fb-after: linear-gradient(170deg, #173a44, #2f6a6e 45%, #e2a65b 100%); }
-.sc2 { --fb-before: linear-gradient(190deg, #55595e, #3c4045 60%, #6a6a66); --fb-after: linear-gradient(190deg, #0a1322, #1b2f52 50%, #a35d67); }
-.sc3 { --fb-before: linear-gradient(140deg, #7a7975, #5f5f5c, #8c8a84); --fb-after: linear-gradient(140deg, #2a1f2b, #8a4d3d 55%, #e9b978); }
-
-/* ---------- Motion graphics demos ---------- */
-.demo { display: grid; gap: .9rem; }
-.demo-stage { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius); background: linear-gradient(160deg, #142229, #1f3a40 55%, #3a3a33); }
-.demo-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.demo p { color: #cfcac1; font-size: 1rem; }
-
-.lt { position: absolute; left: 8%; bottom: 16%; display: flex; gap: .9rem; align-items: stretch; }
-.lt-bar { width: 4px; background: var(--tungsten); transform-origin: top; }
-.lt-text { display: grid; line-height: 1.3; }
-.lt-text strong { font-family: var(--display); font-size: clamp(1.05rem, 2.2vw, 1.6rem); }
-.lt-text span { color: #cfcac1; font-size: .95rem; }
-.is-playing .lt-bar { animation: bar-in .5s ease-out both; }
-.is-playing .lt-text { animation: text-in .75s .25s cubic-bezier(.2, .8, .2, 1) both; }
-@keyframes bar-in { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@keyframes text-in { from { clip-path: inset(0 100% 0 0); transform: translateX(-12px); } to { clip-path: inset(0 0 0 0); transform: none; } }
-
-.tr { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
-.tr-title { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 4.6vw, 3rem); letter-spacing: .06em; }
-.tr-line { height: 2px; width: 6rem; background: var(--tungsten); margin: 1rem auto 0; }
-.is-playing .tr-title { animation: title-in 1.4s cubic-bezier(.2, .8, .2, 1) both; }
-.is-playing .tr-line { animation: line-in 1s .6s ease-out both; }
-@keyframes title-in { from { letter-spacing: .38em; opacity: 0; } to { letter-spacing: .06em; opacity: 1; } }
-@keyframes line-in { from { width: 0; } to { width: 6rem; } }
-
-.wp-a, .wp-b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: clamp(1.2rem, 3vw, 2rem); }
-.wp-a { background: linear-gradient(160deg, #173a44, #2f6a6e); }
-.wp-b { background: linear-gradient(160deg, #6b3f2a, #e2a65b); color: #1a1206; }
-.is-playing .wp-b { animation: wipe 1.2s .3s cubic-bezier(.7, 0, .2, 1) both; }
-@keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-
-/* ---------- About ---------- */
-.portrait {
-  aspect-ratio: 4 / 5; border-radius: var(--radius); display: grid; place-items: center; overflow: hidden;
-  background-image: var(--photo, linear-gradient(160deg, #1c3b44 0%, #2f6a6e 45%, #e2a65b 100%)); background-size: cover; background-position: center;
-  font-family: var(--display); font-weight: 800; font-size: 4rem; color: rgba(236, 231, 222, .85);
-}
-
-/* ---------- Contact ---------- */
-.form { display: grid; gap: 1.25rem; }
-.field { display: grid; gap: .45rem; }
-.field label { font-weight: 600; font-size: .98rem; }
-.field input, .field select, .field textarea {
-  width: 100%; background: var(--bg-raise); color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--radius);
-  padding: .85rem 1rem; font: inherit;
-}
-.field textarea { min-height: 160px; resize: vertical; }
-.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--tungsten); outline-offset: 1px; border-color: var(--tungsten); }
-.form-note { color: var(--muted); font-size: .95rem; min-height: 1.5em; }
-.contact-side h2 { margin-bottom: 1rem; }
-.email-line { font-family: var(--display); font-weight: 800; font-size: clamp(1.2rem, 2.4vw, 1.6rem); word-break: break-all; }
-
-/* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--line); margin-top: clamp(4rem, 8vw, 7rem); padding-block: 3rem; }
-.foot { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
-@media (max-width: 800px) { .foot { grid-template-columns: 1fr; } }
-.foot-name { font-family: var(--display); font-weight: 800; font-size: 1.2rem; margin-bottom: .4rem; }
-.foot ul { list-style: none; display: grid; gap: .4rem; }
-.foot a { text-decoration: none; color: var(--muted); }
-.foot a:hover { color: var(--text); }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
-}
-
-</style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="container nav">
-    <a class="wordmark" href="#home">Manish Barma</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#showreel">Showreel</a></li>
-      <li><a href="#color-grading">Color grading</a></li>
-      <li><a href="#motion-graphics">Motion graphics</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a class="btn btn-primary btn-sm" href="#contact">Hire me</a></li>
-    </ul>
-  </div>
-</header>
-<main id="main">
-<!-- ==================== PAGE: HOME ==================== -->
-<div class="page" id="page-home" hidden>
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-bar hero-bar-top">
-    <div class="container">
-      <span class="status">Available for freelance projects</span>
-      <span>Cinematic editing, color grading, motion graphics</span>
-    </div>
-  </div>
-
-  <!-- Optional: add a looping background video here
-  <video class="hero-video" src="assets/videos/hero-loop.mp4" autoplay muted loop playsinline></video> -->
-
-  <div class="hero-main">
-    <div class="container">
-      <h1 id="hero-title">Stories cut with rhythm, graded with intent.</h1>
-      <p class="lead">I'm Manish Barma, a video editor working in DaVinci Resolve. I edit, color grade and animate for filmmakers, brands and creators who want their footage to feel cinematic.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#work">See my work</a>
-        <a class="btn btn-ghost" href="#contact">Hire me</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-bar hero-bar-bottom">
-    <div class="container timeline-row">
-      <span class="timecode" id="timecode" aria-hidden="true">00:00:00:00</span>
-      <div class="timeline" aria-hidden="true">
-        <span class="clip" style="flex:3"></span><span class="clip t" style="flex:2"></span><span class="clip" style="flex:4"></span>
-        <span class="clip a" style="flex:2"></span><span class="clip" style="flex:3"></span><span class="clip t" style="flex:3"></span>
-        <span class="clip" style="flex:2"></span>
-        <span class="playhead" id="playhead"></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Selected work</h2>
-      <a class="text-link" href="#work">View all projects</a>
-    </div>
-    <div class="card-grid">
-      
-      <a class="project" href="#work">
-        <div class="thumb g1"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Cinematic Travel Film</h3><p>Editing and color grade</p></div>
-      </a>
-      
-      <a class="project" href="#work">
-        <div class="thumb g2"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Night Color Study</h3><p>Color grading</p></div>
-      </a>
-      
-      <a class="project" href="#work">
-        <div class="thumb g4"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Animated Title Sequence</h3><p>Motion graphics</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>What I do</h2></div>
-    <div class="grid-4">
-      <div class="item"><h3>Cinematic editing</h3><p>Cuts built around story and pacing, so every scene earns its place.</p></div>
-      <div class="item"><h3>Color grading</h3><p>Shots matched and graded in DaVinci Resolve for a consistent look and mood.</p></div>
-      <div class="item"><h3>Motion graphics</h3><p>Titles, lower thirds and transitions that support the edit without taking it over.</p></div>
-      <div class="item"><h3>Short-form content</h3><p>Vertical and social edits that keep the cinematic feel in a tighter runtime.</p></div>
-    </div>
-    <p style="margin-top:2rem"><a class="text-link" href="#services">See services and how I work</a></p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>The showreel</h2><a class="text-link" href="#showreel">Watch full screen</a></div>
-    <a class="project" href="#showreel" aria-label="Open the showreel page">
-      <div class="thumb g5"><span class="play" aria-hidden="true"></span></div>
-    </a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: WORK ==================== -->
-<div class="page" id="page-work" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Work</h1>
-    <p class="lead">A selection of cinematic edits, color grades and motion pieces. Select a project to watch it.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container">
-    <div class="filters" role="group" aria-label="Filter projects">
-      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" type="button" data-filter="cinematic" aria-pressed="false">Cinematic</button>
-      <button class="chip" type="button" data-filter="color" aria-pressed="false">Color grading</button>
-      <button class="chip" type="button" data-filter="motion" aria-pressed="false">Motion graphics</button>
-      <button class="chip" type="button" data-filter="short" aria-pressed="false">Short-form</button>
-    </div>
-
-    <!-- REPLACE each title and set data-video to an embed link, for example:
-         data-video="https://www.youtube.com/embed/VIDEO_ID"
-         data-video="https://player.vimeo.com/video/VIDEO_ID" -->
-    <div class="card-grid">
-      
-      <button class="project" type="button" data-category="cinematic color" data-title="Cinematic Travel Film" data-video="">
-        <div class="thumb g1"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Cinematic Travel Film</h3><p>Editing and color grade</p></div>
-      </button>
-      
-      <button class="project" type="button" data-category="color" data-title="Night Color Study" data-video="">
-        <div class="thumb g2"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Night Color Study</h3><p>Color grading</p></div>
-      </button>
-      
-      <button class="project" type="button" data-category="cinematic motion" data-title="Brand Teaser" data-video="">
-        <div class="thumb g3"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Brand Teaser</h3><p>Editing and motion graphics</p></div>
-      </button>
-      
-      <button class="project" type="button" data-category="motion" data-title="Animated Title Sequence" data-video="">
-        <div class="thumb g4"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Animated Title Sequence</h3><p>Motion graphics</p></div>
-      </button>
-      
-      <button class="project" type="button" data-category="cinematic color" data-title="Short Film Trailer" data-video="">
-        <div class="thumb g5"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Short Film Trailer</h3><p>Editing, pacing and grade</p></div>
-      </button>
-      
-      <button class="project" type="button" data-category="short" data-title="Vertical Reel Cutdown" data-video="">
-        <div class="thumb g6"><span class="play" aria-hidden="true"></span></div>
-        <div class="project-meta"><h3>Vertical Reel Cutdown</h3><p>Short-form content</p></div>
-      </button>
-    </div>
-  </div>
-</section>
-
-<dialog id="videoModal" aria-labelledby="modalTitle">
-  <div class="modal-bar">
-    <h2 id="modalTitle">Project</h2>
-    <button class="modal-close" type="button">Close</button>
-  </div>
-  <div class="modal-frame"></div>
-</dialog>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: SHOWREEL ==================== -->
-<div class="page" id="page-showreel" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Showreel</h1>
-    <p class="lead">A short look at my editing, grading and motion work in one place.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container">
-    <!-- REPLACE data-src with your embed link, e.g. https://www.youtube.com/embed/VIDEO_ID -->
-    <div class="player" data-src="" data-title="Manish Barma showreel">
-      <div class="player-empty">
-        <span class="play-lg" aria-hidden="true"></span>
-        <p>Showreel coming soon. Add the video link in the SHOWREEL section of this file.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container split">
-    <div class="prose">
-      <h2>What's in the reel</h2>
-      <p>The reel is cut to show range: story-driven scenes for pacing, graded shots for look and mood, and short motion pieces for titles and transitions.</p>
-      <p>If you'd like to see more of a particular style, tell me and I'll send a tailored selection.</p>
-    </div>
-    <dl class="detail-list">
-      <dt>Editor</dt><dd>Manish Barma</dd>
-      <dt>Software</dt><dd>DaVinci Resolve</dd>
-      <dt>Focus</dt><dd>Cinematic editing, color grading, motion graphics</dd>
-      <dt>Contact</dt><dd><a class="text-link" href="mailto:manishbarma89@gmail.com">manishbarma89@gmail.com</a></dd>
-    </dl>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: COLOR-GRADING ==================== -->
-<div class="page" id="page-color-grading" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Color grading</h1>
-    <p class="lead">Drag the slider on each frame to compare the original footage with the graded result.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container ba-list">
-    <!-- To use your own frames, add these to the .ba element:
-         style="--img-before:url('assets/images/grade1-before.jpg'); --img-after:url('assets/images/grade1-after.jpg')" -->
-    
-    <div class="ba-row">
-      <div class="ba sc1">
-        <div class="ba-layer ba-after"></div>
-        <div class="ba-layer ba-before"></div>
-        <div class="ba-handle"></div>
-        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Golden hour landscape">
-      </div>
-      <div class="ba-note"><h3>Golden hour landscape</h3><p>Flat log footage balanced, then given cool shadows and warm highlights to separate the subject from the background.</p></div>
-    </div>
-    
-    <div class="ba-row">
-      <div class="ba sc2">
-        <div class="ba-layer ba-after"></div>
-        <div class="ba-layer ba-before"></div>
-        <div class="ba-handle"></div>
-        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Night city">
-      </div>
-      <div class="ba-note"><h3>Night city</h3><p>Exposure lifted where the eye needs it, colors controlled so neon stays rich without clipping.</p></div>
-    </div>
-    
-    <div class="ba-row">
-      <div class="ba sc3">
-        <div class="ba-layer ba-after"></div>
-        <div class="ba-layer ba-before"></div>
-        <div class="ba-handle"></div>
-        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Interior portrait">
-      </div>
-      <div class="ba-note"><h3>Interior portrait</h3><p>Skin tones kept natural first, then a soft contrast curve and warm tint to set the mood of the scene.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>How I grade</h2></div>
-    <ol class="steps">
-      <li><h3>Balance and match</h3><p>Correct exposure and white balance, then match shots so a scene feels like one continuous moment.</p></li>
-      <li><h3>Protect skin and key colors</h3><p>Make sure people look natural and important colors in the frame stay believable.</p></li>
-      <li><h3>Build the look</h3><p>Shape contrast, color and tone to support the mood of the story, not to show off.</p></li>
-      <li><h3>Finish</h3><p>Add subtle final touches and check the result before delivering in the format you need.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: MOTION-GRAPHICS ==================== -->
-<div class="page" id="page-motion-graphics" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Motion graphics</h1>
-    <p class="lead">Clean, restrained animation that supports the story: titles, lower thirds and transitions.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container">
-    <div class="grid-2">
-      <div class="demo">
-        <div class="demo-stage" id="demo-lt">
-          <div class="lt">
-            <span class="lt-bar"></span>
-            <div class="lt-text"><strong>Speaker Name</strong><span>Title or location</span></div>
-          </div>
-        </div>
-        <div class="demo-head"><h3>Lower third</h3><button class="chip" type="button" data-replay="demo-lt">Replay</button></div>
-        <p>Name and title graphics that arrive smoothly and stay out of the way of the shot.</p>
-      </div>
-
-      <div class="demo">
-        <div class="demo-stage" id="demo-title">
-          <div class="tr"><p class="tr-title">Untitled Film</p><span class="tr-line"></span></div>
-        </div>
-        <div class="demo-head"><h3>Title reveal</h3><button class="chip" type="button" data-replay="demo-title">Replay</button></div>
-        <p>Opening titles with controlled timing and spacing, matched to the tone of the film.</p>
-      </div>
-
-      <div class="demo">
-        <div class="demo-stage" id="demo-wipe">
-          <div class="wp-a">Shot A</div>
-          <div class="wp-b">Shot B</div>
-        </div>
-        <div class="demo-head"><h3>Transition</h3><button class="chip" type="button" data-replay="demo-wipe">Replay</button></div>
-        <p>Transitions that carry the viewer from one shot to the next without distracting from the story.</p>
-      </div>
-    </div>
-    <p class="muted" style="margin-top:2rem">These are live sketches of the style. Real project clips appear in the motion reel below.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>Motion reel</h2></div>
-    <!-- REPLACE data-src with your embed link -->
-    <div class="player" data-src="" data-title="Motion graphics reel">
-      <div class="player-empty" style="--fb: linear-gradient(120deg, #12252b 0%, #4f8f94 60%, #d8e0d2 100%)">
-        <span class="play-lg" aria-hidden="true"></span>
-        <p>Motion reel coming soon. Add the video link in the MOTION section of this file.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: SERVICES ==================== -->
-<div class="page" id="page-services" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Services</h1>
-    <p class="lead">Everything happens in DaVinci Resolve, from the first cut to the final grade, so your project stays consistent from start to finish.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container grid-2">
-    <div class="item">
-      <h3>Cinematic editing</h3>
-      <p>I shape your footage into a story with a clear structure, deliberate pacing and cuts that feel natural.</p>
-      <p class="good-for">Good for short films, trailers, travel films, event films and brand stories.</p>
-    </div>
-    <div class="item">
-      <h3>Color grading</h3>
-      <p>I balance and match your shots, then build a look that fits the mood of the film.</p>
-      <p class="good-for">Good for projects that already have an edit and need a consistent, polished look.</p>
-    </div>
-    <div class="item">
-      <h3>Motion graphics</h3>
-      <p>Titles, lower thirds and transitions designed to match the style of your video.</p>
-      <p class="good-for">Good for intros, interviews, explainers and branded content.</p>
-    </div>
-    <div class="item">
-      <h3>Short-form content</h3>
-      <p>Vertical and social edits that keep a cinematic feel in a shorter runtime.</p>
-      <p class="good-for">Good for reels, teasers, cutdowns and social campaigns.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>How we work together</h2></div>
-    <ol class="steps">
-      <li><h3>Brief</h3><p>You share the goal, footage, references and deadline. I ask any questions I need.</p></li>
-      <li><h3>First cut</h3><p>I edit the story, pacing and structure, and send it for your review.</p></li>
-      <li><h3>Revisions</h3><p>We refine the cut together. Then I add the color grade and motion graphics.</p></li>
-      <li><h3>Delivery</h3><p>You receive the final video in the formats and sizes you need.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container split">
-    <div class="prose">
-      <h2>What I need from you</h2>
-      <ul class="plain">
-        <li>Your footage, with the camera format if you know it</li>
-        <li>A short description of the story or goal</li>
-        <li>References: videos or looks you like</li>
-        <li>Your deadline and where the video will be published</li>
-      </ul>
-    </div>
-    <div class="prose">
-      <h2>Pricing</h2>
-      <p>The price depends on runtime, amount of footage, how much graphics work is involved and how soon you need it.</p>
-      <p>Send a short brief and I'll reply with a quote.</p>
-      <p style="margin-top:1.5rem"><a class="btn btn-primary" href="#contact">Request a quote</a></p>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: ABOUT ==================== -->
-<div class="page" id="page-about" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>About</h1>
-    <p class="lead">A video editor who cares about story, rhythm and how a film feels.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container split">
-    <!-- To add your photo: style="--photo:url('assets/images/manish.jpg')" and remove the letters -->
-    <div class="portrait" role="img" aria-label="Portrait placeholder for Manish Barma">MB</div>
-    <div class="prose">
-      <h2>Hi, I'm Manish.</h2>
-      <p>I'm a video editor and I work in DaVinci Resolve. For more than six months I've been editing, grading and animating, and my focus is cinematic work: films that have a clear story, a steady rhythm and a look that supports the mood.</p>
-      <p>I'm at the start of my career, which means each project gets my full attention. I communicate clearly, take feedback well and deliver on time.</p>
-      <p>I'm looking for clients who want a careful editor for films, brand videos and social content.</p>
-      <p style="margin-top:1.5rem"><a class="btn btn-primary" href="#contact">Work with me</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><h2>How I approach an edit</h2></div>
-    <div class="grid-4">
-      <div class="item"><h3>Story first</h3><p>Every cut should serve the story. If a shot doesn't move it forward, it goes.</p></div>
-      <div class="item"><h3>Rhythm matters</h3><p>Pacing decides how a scene feels. I cut to the emotion of a moment, not just the action.</p></div>
-      <div class="item"><h3>Grade for mood</h3><p>Color supports the story. I match shots first, then shape a look that fits the film.</p></div>
-      <div class="item"><h3>Graphics with restraint</h3><p>Motion graphics should help the viewer, not compete with the footage.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container split">
-    <div class="prose">
-      <h2>Skills</h2>
-      <ul class="plain">
-        <li>Cinematic video editing</li>
-        <li>Pacing and storytelling</li>
-        <li>Color grading and shot matching</li>
-        <li>Motion graphics: titles, lower thirds, transitions</li>
-      </ul>
-    </div>
-    <div class="prose">
-      <h2>Tools</h2>
-      <ul class="plain">
-        <li>DaVinci Resolve</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container cta">
-    <h2>Have a project in mind?</h2>
-    <p>Tell me about your footage, your story and your deadline. I'll reply with how I'd approach it.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#contact">Start a project</a>
-      <a class="btn btn-ghost" href="mailto:manishbarma89@gmail.com">Email Manish</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ==================== PAGE: CONTACT ==================== -->
-<div class="page" id="page-contact" hidden>
-<div class="page-head">
-  <div class="container">
-    <h1>Let's talk about your project</h1>
-    <p class="lead">Share a few details and I'll reply with next steps and a quote.</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container split">
-    <form class="form" id="contactForm">
-      <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-      <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-      <div class="field">
-        <label for="type">What do you need?</label>
-        <select id="type" name="type">
-          <option>Cinematic editing</option>
-          <option>Color grading</option>
-          <option>Motion graphics</option>
-          <option>Short-form content</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="field"><label for="message">About the project</label><textarea id="message" name="message" placeholder="What is the video about, how long is it, and when do you need it?" required></textarea></div>
-      <div><button class="btn btn-primary" type="submit">Send message</button></div>
-      <p class="form-note" id="formNote" role="status"></p>
-    </form>
-
-    <div class="contact-side prose">
-      <h2>Prefer email?</h2>
-      <p class="email-line"><a href="mailto:manishbarma89@gmail.com">manishbarma89@gmail.com</a></p>
-      <p style="margin-top:1rem"><button class="btn btn-ghost btn-sm" type="button" data-copy="manishbarma89@gmail.com">Copy email</button></p>
-
-      <h2 style="margin-top:2.5rem">Elsewhere</h2>
-      <!-- REPLACE the # links with your real profiles -->
-      <ul class="plain">
-        <li><a class="text-link" href="https://www.youtube.com/">YouTube</a></li>
-        <li><a class="text-link" href="https://www.instagram.com/">Instagram</a></li>
-        <li><a class="text-link" href="https://www.linkedin.com/">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-</div>
-</main>
-<footer class="site-footer">
-  <div class="container foot">
-    <div>
-      <p class="foot-name">Manish Barma</p>
-      <p class="muted">Video editor working in DaVinci Resolve. Cinematic editing, color grading and motion graphics.</p>
-    </div>
-    <nav aria-label="Footer">
-      <ul>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#showreel">Showreel</a></li>
-        <li><a href="#color-grading">Color grading</a></li>
-        <li><a href="#motion-graphics">Motion graphics</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-    <div>
-      <p><a href="mailto:manishbarma89@gmail.com">manishbarma89@gmail.com</a></p>
-      <p class="muted">&copy; <span data-year>2026</span> Manish Barma</p>
-    </div>
-  </div>
-</footer>
-<script>
-/* Manish Barma - Video Editor Portfolio */
-(() => {
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const EMAIL = 'manishbarma89@gmail.com';
-
-  /* Footer year */
-  $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
-
-  /* Mobile navigation */
-  const toggle = $('.nav-toggle');
-  const links = $('.nav-links');
-  if (toggle && links) {
-    const setOpen = (open) => {
-      toggle.setAttribute('aria-expanded', String(open));
-      links.dataset.open = String(open);
-    };
-    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
-    links.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
-  }
-
-  /* Hero timeline: playhead and timecode (24 fps) */
-  const tc = $('#timecode');
-  const playhead = $('#playhead');
-  if (tc && playhead) {
-    const LOOP = 18000;
-    const FPS = 24;
-    const pad = (n) => String(n).padStart(2, '0');
-    const render = (ms) => {
-      const t = ms % LOOP;
-      playhead.style.left = (t / LOOP) * 100 + '%';
-      const frames = Math.floor((t / 1000) * FPS);
-      const ff = frames % FPS;
-      const ss = Math.floor(frames / FPS) % 60;
-      const mm = Math.floor(frames / FPS / 60);
-      tc.textContent = `00:${pad(mm)}:${pad(ss)}:${pad(ff)}`;
-    };
-    if (reduceMotion) {
-      render(6000);
-    } else {
-      const start = performance.now();
-      const tick = (now) => { render(now - start); requestAnimationFrame(tick); };
-      requestAnimationFrame(tick);
-    }
-  }
-
-  /* Work page: category filters */
-  const chips = $$('.chip[data-filter]');
-  const projects = $$('.project[data-category]');
-  chips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-      const f = chip.dataset.filter;
-      projects.forEach((p) => {
-        p.hidden = !(f === 'all' || p.dataset.category.split(' ').includes(f));
-      });
-    });
-  });
-
-  /* Work page: video modal */
-  const dlg = $('#videoModal');
-  if (dlg) {
-    const stage = $('.modal-frame', dlg);
-    const title = $('#modalTitle');
-    $$('[data-video]').forEach((card) => {
-      card.addEventListener('click', () => {
-        const src = (card.dataset.video || '').trim();
-        const name = card.dataset.title || 'Project';
-        title.textContent = name;
-        stage.replaceChildren();
-        if (src) {
-          const frame = document.createElement('iframe');
-          frame.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1';
-          frame.title = name;
-          frame.allow = 'autoplay; fullscreen; picture-in-picture';
-          frame.allowFullscreen = true;
-          stage.append(frame);
-        } else {
-          stage.innerHTML =
-            '<div class="modal-empty"><h3>Video coming soon</h3>' +
-            '<p>Add the embed link to this project in the WORK section of this file (the data-video attribute).</p></div>';
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        dlg.showModal();
-      });
-    });
-    $('.modal-close', dlg).addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
-    dlg.addEventListener('close', () => stage.replaceChildren());
-  }
 
-  /* Inline players (showreel, motion reel) */
-  $$('.player[data-src]').forEach((player) => {
-    const src = player.dataset.src.trim();
-    if (!src) return;
-    const frame = document.createElement('iframe');
-    frame.src = src;
-    frame.title = player.dataset.title || 'Video';
-    frame.allow = 'fullscreen; picture-in-picture';
-    frame.allowFullscreen = true;
-    frame.loading = 'lazy';
-    player.replaceChildren(frame);
-  });
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Color grading: before / after sliders */
-  $$('.ba').forEach((ba) => {
-    const range = $('.ba-range', ba);
-    const update = () => ba.style.setProperty('--pos', range.value + '%');
-    range.addEventListener('input', update);
-    update();
-  });
+        body {
+            background: #08090d;
+            color: #f5f5f5;
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+        }
 
-  /* Motion graphics demos: play once in view, replay on click */
-  const play = (stage) => {
-    stage.classList.remove('is-playing');
-    void stage.offsetWidth;
-    stage.classList.add('is-playing');
-  };
-  $$('[data-replay]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const stage = document.getElementById(btn.dataset.replay);
-      if (stage) play(stage);
-    });
-  });
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) { play(entry.target); io.unobserve(entry.target); }
-      });
-    }, { threshold: 0.6 });
-    $$('.demo-stage').forEach((s) => io.observe(s));
-  }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-  /* Contact form: opens the visitor's email app with the message ready */
-  const form = $('#contactForm');
-  if (form) {
-    const note = $('#formNote');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const d = new FormData(form);
-      const subject = `Project inquiry: ${d.get('type')}`;
-      const body = `Hi Manish,\n\n${d.get('message')}\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}`;
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      note.textContent = `Your email app should open with the message ready. If it doesn't, write to ${EMAIL} directly.`;
-    });
-  }
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
 
-  /* Copy email button */
-  const copyBtn = $('[data-copy]');
-  if (copyBtn) {
-    const label = copyBtn.textContent;
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(copyBtn.dataset.copy);
-        copyBtn.textContent = 'Copied';
-      } catch {
-        copyBtn.textContent = 'Copy failed, select the email above';
-      }
-      setTimeout(() => { copyBtn.textContent = label; }, 2000);
-    });
-  }
+        /* NAVIGATION */
 
-  /* Single-file "pages": show one section based on the URL hash */
-  const TITLES = {"home": "Manish Barma | Cinematic Video Editor and Colorist", "work": "Work | Manish Barma, Video Editor", "showreel": "Showreel | Manish Barma, Video Editor", "color-grading": "Color Grading | Manish Barma, Video Editor", "motion-graphics": "Motion Graphics | Manish Barma, Video Editor", "services": "Services | Manish Barma, Video Editor", "about": "About | Manish Barma, Video Editor", "contact": "Contact | Manish Barma, Video Editor"};
-  const route = () => {
-    const id = location.hash.replace('#', '');
-    const key = document.getElementById('page-' + id) ? id : 'home';
-    $$('.page').forEach((p) => { p.hidden = p.id !== 'page-' + key; });
-    $$('.nav-links a, .site-footer nav a').forEach((a) => {
-      if (a.getAttribute('href') === '#' + key) a.setAttribute('aria-current', 'page');
-      else a.removeAttribute('aria-current');
-    });
-    document.title = TITLES[key];
-    window.scrollTo(0, 0);
-  };
-  window.addEventListener('hashchange', route);
-  route();
-})();
-</script>
-</body>
-</html>
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 9, 13, 0.75);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #a7a7ad;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(100, 100, 255, 0.08);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            top: 20%;
+            left: -150px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 7px 13px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+
+            color: #bdbdc4;
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+
+            background: #65d98b;
+
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(50px, 8vw, 95px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            max-width: 900px;
+
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            color: #777b86;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #9b9da6;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 21px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transition: 0.3s;
+        }
+
+        .button.primary {
+            background: white;
+            color: black;
+        }
+
+        .button.primary:hover {
+            transform: translateY(-2px);
+            background: #e8e8e8;
+        }
+
+        .button.secondary {
+            color: #d0d0d5;
+        }
+
+        .button.secondary:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-label {
+            color: #777b86;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(34px, 5vw, 55px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .section-description {
+            color: #9698a1;
+
+            max-width: 700px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            margin-top: 50px;
+        }
+
+        .about-text p {
+            color: #a4a6ae;
+
+            margin-bottom: 20px;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .info-list {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .info-item {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            font-size: 14px;
+        }
+
+        .info-item span:first-child {
+            color: #666a74;
+        }
+
+        .info-item span:last-child {
+            color: #ddd;
+
+            text-align: right;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 50px;
+        }
+
+        .skill {
+            padding: 25px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.015);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(255,255,255,0.18);
+        }
+
+        .skill h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 19px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #858892;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        /* SOFTWARE */
+
+        .software-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 40px;
+        }
+
+        .software {
+            padding: 11px 17px;
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            border-radius: 7px;
+
+            color: #b9bbc2;
+
+            font-size: 14px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            margin-top: 50px;
+
+            border-left: 1px solid rgba(255,255,255,0.1);
+
+            padding-left: 30px;
+        }
+
+        .experience-item {
+            position: relative;
+
+            margin-bottom: 50px;
+        }
+
+        .experience-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #aaa;
+
+            left: -35px;
+
+            top: 8px;
+        }
+
+        .experience-date {
+            color: #666a74;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+        .experience h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+        .experience p {
+            color: #92949d;
+
+            max-width: 650px;
+
+            font-size: 15px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            margin-top: 50px;
+
+            padding: 50px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.01)
+            );
+        }
+
+        .contact-box h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #8f919a;
+
+            margin-bottom: 30px;
+
+            max-width: 600px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 0;
+
+            border-top: 1px solid rgba(255,255,255,0.07);
+
+            color: #666a74;
+
+            font-size: 13px;
+        }
+
+        footer .container {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .about-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                gap: 40px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            footer .container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            MANISH<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+```
